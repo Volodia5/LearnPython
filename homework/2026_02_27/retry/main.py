@@ -1,5 +1,4 @@
 from random import random, choice
-
 from my_decorator import retry
 
 exceptions = (ValueError, OSError)
@@ -10,7 +9,6 @@ def random_exception() -> float:
         raise choice(exceptions)
     return d
 
-
 if __name__ == "__main__":
     for _ in range(100):
-        print("result:", random_exception())
+        print("итого:", random_exception())
