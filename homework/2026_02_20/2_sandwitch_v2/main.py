@@ -1,20 +1,28 @@
 def bread(func):
-    pass
-
-def salat(func):
-    pass
-
-def tomato(func):
-    pass
+    def wrapper():
+        return "Bread\n" + func() + "Bread"
+    return wrapper
 
 def meat(func):
-    pass
+    def wrapper():
+        return func() + "Meat\n"
+    return wrapper
 
+def tomato(func):
+    def wrapper():
+        return func() + "Tomato\n"
+    return wrapper
+
+def salat(func):
+    def wrapper():
+        return func() + "Salat\n"
+    return wrapper
+
+@bread
+@salat
+@tomato
+@meat
 def make_sandwich():
-    return ''
+    return ""
 
-def main():
-    make_sandwich()
-
-if __name__ == '__main__':
-    main()
+print(make_sandwich())
